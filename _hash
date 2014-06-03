@@ -1,0 +1,3 @@
+hash -d server="/Users/youchan/Projects/ubiregi-server"
+hash -d client="/Users/youchan/Projects/ubiregi-client"
+hash -d whitebase="/Users/youchan/Projects/whitebase"

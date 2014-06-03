@@ -1,0 +1,8 @@
+[user]
+	name = youchan
+	email = youchan01@gmail.com
+[mergetool]
+	keepBackup = true
+[core]
+excludesfile = ~/.gitignore
+editor = vim

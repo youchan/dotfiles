@@ -1,0 +1,2 @@
+alias vim='/usr/local/Cellar/macvim/current/MacVim.app/Contents/MacOS/Vim'
+alias today='vim ~/Projects/whitebase/repos/today.md'
