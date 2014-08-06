@@ -1,0 +1,21 @@
+update
+upgrade
+
+tap homebrew/versions
+
+tap phinze/homebrew-cask
+tap homebrew/binary
+
+install brew-cask
+install rbenv ruby-build rbenv-gemset
+install mysql
+install imagemagick
+
+install docker boot2docker
+cask install virtualbox
+
+install redis
+install phantomjs
+install heroku-toolbelt
+install cmake
+install hub
