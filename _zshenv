@@ -1,3 +1,5 @@
 export PATH="$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$PATH"
+export GRADLE_HOME=$HOME/lib/gradle-2.0
+
 eval "$(rbenv init -)"
 eval "$(hub alias -s)"

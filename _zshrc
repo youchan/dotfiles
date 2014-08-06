@@ -30,5 +30,5 @@ zstyle ':completion:*:*:git:*' script /usr/local/share/git-core/contrib/completi
 autoload -Uz compinit
 compinit
 
-source .aliases
-source .hash
+source ~/.aliases
+source ~/.hash
