@@ -19,3 +19,5 @@ install phantomjs
 install heroku-toolbelt
 install cmake
 install hub
+install vifm
+install macvim --with-lua

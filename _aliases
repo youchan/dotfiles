@@ -1,2 +1,5 @@
 alias vim='/usr/local/Cellar/macvim/current/MacVim.app/Contents/MacOS/Vim'
 alias today='vim ~/Projects/whitebase/repos/today.md'
+alias co='git checkout'
+alias gg='git grep -n'
+alias production="DATABASE_URL='mysql2://ubiregi:sgijG98naO7XqktkulW0@ubiregidb.cepf0ldzkar9.us-east-1.rds.amazonaws.com:3306/ubiregi?sslca=mysql-ssl-ca-cert.pem&pool=25&reconnect=true'"

@@ -13,7 +13,8 @@ autocmd! FileType perl setlocal shiftwidth=4 tabstop=2 softtabstop=2
 autocmd! FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd! FileType haml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd! FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd! FileType css  setlocal shiftwidth=4 tabstop=2 softtabstop=2
+autocmd! FileType css  setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd! FileType scss  setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd! FileType coffee  setlocal shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
 
@@ -24,6 +25,7 @@ endif
 call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundle 'Shougo/neobundle.vim'
 
+NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/vimproc'
@@ -32,13 +34,15 @@ NeoBundle 'vim-scripts/buftabs'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-cucumber'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-pathogen'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'scrooloose/syntastic'
 
 NeoBundleLazy 'alpaca-tc/alpaca_tags', {
     \ 'depends': ['Shougo/vimproc', 'Shougo/unite.vim'],
@@ -117,6 +121,17 @@ set laststatus=2
 let g:indentLine_color_term=23
 "-----------------------------------------
 
+"-----------------------------------------
+" syntastic
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2
+let g:syntastic_mode_map = {'mode': 'passive'} 
+augroup AutoSyntastic
+    autocmd!
+    autocmd  BufWritePost * SyntasticCheck
+augroup END
+"-----------------------------------------
+
 syntax on
 set encoding=utf8
 set fileencoding=utf8
@@ -129,15 +144,26 @@ set hidden
 
 set matchpairs& matchpairs+=<:>
 
-hi SpecialKey ctermfg=23
+hi SpecialKey ctermfg=18
 
 nmap <C-D> <ESC>a<C-R>=strftime("%Y-%m-%d")<CR><ESC>
 nmap <C-T> <ESC>a<C-R>=strftime("%H:%M:%S")<CR><ESC>
 nmap <C-S> <ESC>:Gstatus<CR><ESC>
 map <C-P> <ESC>:bp<CR>
 map <C-N> <ESC>:bn<CR>
-map <C-W>d <ESC>:bd<CR>
-map <C-W><C-D> <ESC>:bd!<CR>
+map <C-B>d <ESC>:bd<CR>
+map <C-B><C-D> <ESC>:bd!<CR>
+map <C-B>1 <ESC>:b1<CR>
+map <C-B>2 <ESC>:b2<CR>
+map <C-B>3 <ESC>:b3<CR>
+map <C-B>4 <ESC>:b4<CR>
+map <C-B>5 <ESC>:b5<CR>
+map <C-B>6 <ESC>:b6<CR>
+map <C-B>7 <ESC>:b7<CR>
+map <C-B>8 <ESC>:b8<CR>
+map <C-B>9 <ESC>:b9<CR>
+map <C-B>0 <ESC>:b10<CR>
+map <C-S> <ESC>:SyntasticCheck
 
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 au BufRead,BufNewFile *.md set filetype=markdown
