@@ -3,4 +3,4 @@ def Pry.set_color sym, color
   { sym => color.to_s }
 end
 
-Pry.set_color :integer, '1;37'
+#Pry.set_color :integer, '1;37'

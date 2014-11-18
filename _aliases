@@ -1,5 +1,12 @@
-alias vim='/usr/local/Cellar/macvim/current/MacVim.app/Contents/MacOS/Vim'
+#alias vim='/usr/local/Cellar/macvim/current/MacVim.app/Contents/MacOS/Vim'
+#alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias today='vim ~/Projects/whitebase/repos/today.md'
-alias co='git checkout'
-alias gg='git grep -n'
+alias st='git status'
+alias gca='git commit -a'
+alias co='git checkout `git branch | peco`'
 alias production="DATABASE_URL='mysql2://ubiregi:sgijG98naO7XqktkulW0@ubiregidb.cepf0ldzkar9.us-east-1.rds.amazonaws.com:3306/ubiregi?sslca=mysql-ssl-ca-cert.pem&pool=25&reconnect=true'"
+alias vm='PECO_SELS=`ls ./app/models/**/*.rb | peco`; test $? -eq 0 && vim $PECO_SELS'
+alias vc='PECO_SELS=`ls ./app/controllers/**/*.rb | peco`; test $? -eq 0 && vim $PECO_SELS'
+alias vv='PECO_SELS=`ls ./app/views/**/*.haml | peco`; test $? -eq 0 && vim $PECO_SELS'
+alias vj='PECO_SELS=`ls ./app/assets/javascripts/**/*.(coffee|js) | peco`; test $? -eq 0 && vim $PECO_SELS'
+

@@ -13,4 +13,12 @@ editor = vim
 	cmd = /opt/homebrew-cask/Caskroom/sourcetree/1.9.1/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [alias]
+    co = checkout
+    st = status
     tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
+    ca = commit -a
+    s = show --abbrev-commit --decorate
+    b = branch -vv
+    g = grep -n
+[push]
+	default = simple
