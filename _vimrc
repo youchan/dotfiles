@@ -181,6 +181,18 @@ function! s:AutoMarkrement()
 endfunction
 "-----------------------------------------
 
+"-----------------------------------------
+" skk.vim
+" http://peryaudo.hatenablog.com/entry/20100505/1273048637
+let skk_jisyo = '~/.skk-jisyo'
+let skk_large_jisyo = '~/Library/Application Support/AquaSKK/SKK-JISYO.L'
+let skk_auto_save_jisyo = 1
+let skk_keep_state = 1
+let skk_egg_like_newline = 1
+let skk_show_annotation = 1
+let skk_use_face = 1
+"-----------------------------------------
+
 "let g:giti_log_pretty_format='%h %s (%an)%d'
 
 syntax on
@@ -199,6 +211,9 @@ hi SpecialKey ctermfg=18
 
 inoremap <C-D> <C-R>=strftime("%Y-%m-%d")<CR>
 inoremap <C-E> <C-R>=strftime("%H:%M:%S")<CR>
+inoremap <C-L> <Right>
+inoremap <C-B> <Left>
+inoremap <C-H> <BS>
 nnoremap <C-G> :GStatus<CR>
 nnoremap <C-P> :bp<CR>
 nnoremap <C-N> :bn<CR>

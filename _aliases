@@ -7,4 +7,4 @@ alias vm='PECO_SELS=`ls ./app/models/**/*.rb | peco`; test $? -eq 0 && vim $PECO
 alias vc='PECO_SELS=`ls ./app/controllers/**/*.rb | peco`; test $? -eq 0 && vim $PECO_SELS'
 alias vv='PECO_SELS=`ls ./app/views/**/*.haml | peco`; test $? -eq 0 && vim $PECO_SELS'
 alias vj='PECO_SELS=`ls ./app/assets/javascripts/**/*.(coffee|js) | peco`; test $? -eq 0 && vim $PECO_SELS'
-
+alias gti='git'

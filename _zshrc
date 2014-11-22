@@ -41,24 +41,21 @@ source ~/.hash
 
 function gg() {
     PECO_SELS=`git grep -n $1 | peco`
-    if test $? -eq 0
-    then
+    if [ "$?" -eq 0 ]; then
       vim `echo $PECO_SELS | awk -F":" '{ print "-c " $2 " " $1 }'`
     fi
 }
 
 function ga() {
     PECO_SELS=`git st -s | peco`
-    if test $? -eq 0
-    then
+    if [ "$?" -eq 0 ]; then
       git add `echo $PECO_SEL | awk -F" " '{ print $2 }'`S
     fi
 }
 
 function fixup() {
     PECO_SELS=`git log --pretty="%h %s(%an) %d" | peco`
-    if test $? -eq 0
-    then
+    if [ "$?" -eq 0 ]; then
       git commit --fixup `echo $PECO_SELS | awk -F" " '{ print $1 }'`
     fi
 }
