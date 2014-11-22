@@ -2,12 +2,8 @@ update
 upgrade
 
 tap homebrew/versions
-
-tap phinze/homebrew-cask
 tap homebrew/binary
 
-install brew-cask
-install rbenv ruby-build rbenv-gemset
 install mysql
 install imagemagick
 
@@ -21,3 +17,7 @@ install cmake
 install hub
 install vifm
 install macvim --with-lua
+
+cask install skype
+cask install hipchat
+

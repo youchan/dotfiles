@@ -4,6 +4,6 @@ brew_cask:
 	brew bundle
 
 rbenv:
-	rbenv install 2.1.0
+	rbenv install 2.1.5
 	rbenv rehash
-	rbenv global 2.1.0
+	rbenv global 2.1.5
