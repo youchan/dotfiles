@@ -40,6 +40,9 @@ NeoBundle 'Shougo/vimproc.vim', {
 \    },
 \ }
 
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'taichouchou2/html5.vim'
+NeoBundle 'taichouchou2/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete.vim'
@@ -62,6 +65,13 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'basyura/unite-rails'
 NeoBundle 'tyru/skk.vim'
 NeoBundle 'tyru/skkdict.vim'
+NeoBundle 'LeafCage/yankround.vim'
+NeoBundle 'mattn/emmet-vim'
+
+if !has('gui_running')
+    NeoBundle 'tyru/skk.vim'
+    NeoBundle 'vim-scripts/buftabs'
+end
 
 NeoBundleLazy 'alpaca-tc/alpaca_tags', {
     \ 'depends': ['Shougo/vimproc', 'Shougo/unite.vim'],
@@ -94,11 +104,13 @@ call neobundle#end()
 
 "-----------------------------------------
 " neocomplete
+let g:neocomplete#skip_auto_completion_time = '0.2'
 let g:neocomplete#enable_at_startup=1
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+"if !exists('g:neocomplete#force_omni_input_patterns')
+    "let g:neocomplete#force_omni_input_patterns = {}
+"endif
+"let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "-----------------------------------------
 
 
@@ -106,10 +118,10 @@ let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 " alpaca_tags
 " ~/.ctagsにctagsの設定ファイルを設置します。現在無い人は、このディレクトリ内の.ctagsをコピーしてください。
 " 適切なlanguageは`ctags --list-maps=all`で見つけてください。人によりますので。
-let g:alpaca_update_tags_config = {
-    \ '_' : '-R --sort=yes --languages=-js,html,css',
-    \ 'ruby': '--languages=+Ruby',
-    \ }
+"let g:alpaca_update_tags_config = {
+    "\ '_' : '-R --sort=yes --languages=-js,html,css',
+    "\ 'ruby': '--languages=+Ruby',
+    "\ }
 
 "augroup AlpacaTags
     "autocmd!
@@ -184,13 +196,15 @@ endfunction
 "-----------------------------------------
 " skk.vim
 " http://peryaudo.hatenablog.com/entry/20100505/1273048637
-let skk_jisyo = '~/.skk-jisyo'
-let skk_large_jisyo = '~/Library/Application Support/AquaSKK/SKK-JISYO.L'
-let skk_auto_save_jisyo = 1
-let skk_keep_state = 1
-let skk_egg_like_newline = 1
-let skk_show_annotation = 1
-let skk_use_face = 1
+if !has('gui_running')
+    let skk_jisyo = '~/.skk-jisyo'
+    let skk_large_jisyo = '~/Library/Application Support/AquaSKK/SKK-JISYO.L'
+    let skk_auto_save_jisyo = 1
+    let skk_keep_state = 1
+    let skk_egg_like_newline = 1
+    let skk_show_annotation = 1
+    let skk_use_face = 1
+end
 "-----------------------------------------
 
 "let g:giti_log_pretty_format='%h %s (%an)%d'
@@ -211,7 +225,7 @@ hi SpecialKey ctermfg=18
 
 inoremap <C-D> <C-R>=strftime("%Y-%m-%d")<CR>
 inoremap <C-E> <C-R>=strftime("%H:%M:%S")<CR>
-inoremap <C-L> <Right>
+inoremap <C-F> <Right>
 inoremap <C-B> <Left>
 inoremap <C-H> <BS>
 nnoremap <C-G> :GStatus<CR>
@@ -232,13 +246,20 @@ nnoremap <C-B>8 <ESC>:b8<CR>
 nnoremap <C-B>9 <ESC>:b9<CR>
 nnoremap <C-B>0 <ESC>:b10<CR>
 
+nmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap <Up> <Plug>(yankround-prev)
+nmap <Down> <Plug>(yankround-next)
+
 vnoremap ; $h
 vnoremap a ggvvG$
 
 nnoremap <silent>m :<C-u>call <sid>AutoMarkrement()<CR>
 
-noremap [unite] <NOP>
-nmap <SPACE> [unite]
+nnoremap [unite] <NOP>
+nmap <Space> [unite]
 nnoremap [unite]m :Unite mark<CR>
 nnoremap [unite]b :Unite buffer<CR>
 nnoremap [unite]f :Unite file<CR>
@@ -250,6 +271,14 @@ nnoremap [unite]rs :Unite rails/stylesheet<CR>
 nnoremap [unite]gb :Unite giti/branch<CR>
 nnoremap [unite]gs :Unite giti/status<CR>
 nnoremap [unite]gl :Unite giti/log<CR>
+
+let mapleader = ","
+
+" カーソル下のURLをブラウザで開く
+nmap <Leader>o <Plug>(openbrowser-open)
+vmap <Leader>o <Plug>(openbrowser-open)
+" ググる
+nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 

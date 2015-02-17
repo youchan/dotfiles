@@ -1,6 +1,7 @@
 #export VIM_HOME='/Applications/MacVim.app/Contents/MacOS'
-export VIM_HOME='/usr/local/Cellar/macvim/current/MacVim.app/Contents/MacOS'
-export PATH="$VIM_HOME:$HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$PATH"
+export VIM_APP_DIR='/usr/local/Cellar/macvim/current/MacVim.app'
+export LLVM_HOME='/usr/local/opt/llvm'
+export PATH="$HOME/bin:$LLVM_HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$PATH"
 export GRADLE_HOME=$HOME/lib/gradle-2.0
 
 eval "$(rbenv init -)"

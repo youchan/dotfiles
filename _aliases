@@ -1,10 +1,13 @@
 alias today='vim ~/Projects/whitebase/repos/today.md'
-alias st='git status'
 alias gca='git commit -a'
 alias co='git checkout `git branch | peco`'
-alias production="DATABASE_URL='mysql2://ubiregi:sgijG98naO7XqktkulW0@ubiregidb.cepf0ldzkar9.us-east-1.rds.amazonaws.com:3306/ubiregi?sslca=mysql-ssl-ca-cert.pem&pool=25&reconnect=true'"
+alias production="DATABASE_URL='`heroku config:get DATABASE_URL --app=ubiregi-server`'"
 alias vm='PECO_SELS=`ls ./app/models/**/*.rb | peco`; test $? -eq 0 && vim $PECO_SELS'
 alias vc='PECO_SELS=`ls ./app/controllers/**/*.rb | peco`; test $? -eq 0 && vim $PECO_SELS'
 alias vv='PECO_SELS=`ls ./app/views/**/*.haml | peco`; test $? -eq 0 && vim $PECO_SELS'
 alias vj='PECO_SELS=`ls ./app/assets/javascripts/**/*.(coffee|js) | peco`; test $? -eq 0 && vim $PECO_SELS'
+alias mvm='PECO_SELS=`ls ./app/models/**/*.rb | peco`; test $? -eq 0 && mvim $PECO_SELS'
+alias mvc='PECO_SELS=`ls ./app/controllers/**/*.rb | peco`; test $? -eq 0 && mvim $PECO_SELS'
+alias mvv='PECO_SELS=`ls ./app/views/**/*.haml | peco`; test $? -eq 0 && mvim $PECO_SELS'
+alias mvj='PECO_SELS=`ls ./app/assets/javascripts/**/*.(coffee|js) | peco`; test $? -eq 0 && mvim $PECO_SELS'
 alias gti='git'
