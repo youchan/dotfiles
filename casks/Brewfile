@@ -6,6 +6,7 @@ tap homebrew/binary
 
 install mysql
 install imagemagick
+install pkg-config
 
 install docker boot2docker
 cask install virtualbox
@@ -16,8 +17,14 @@ install heroku-toolbelt
 install cmake
 install hub
 install vifm
-install macvim --with-lua
+install vim --with-lua
+install zsh
+install fortune
 
+cask install google-chrome
 cask install skype
-cask install hipchat
-
+cask install slack
+cask install dashlane
+cask install pandoc
+cask install item2
+cask install peco

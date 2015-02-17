@@ -61,6 +61,7 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'basyura/unite-rails'
 NeoBundle 'tyru/skk.vim'
+NeoBundle 'tyru/skkdict.vim'
 
 NeoBundleLazy 'alpaca-tc/alpaca_tags', {
     \ 'depends': ['Shougo/vimproc', 'Shougo/unite.vim'],

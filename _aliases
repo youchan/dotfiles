@@ -1,5 +1,3 @@
-alias vim='/usr/local/Cellar/macvim/current/MacVim.app/Contents/MacOS/Vim'
-#alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias today='vim ~/Projects/whitebase/repos/today.md'
 alias st='git status'
 alias gca='git commit -a'
