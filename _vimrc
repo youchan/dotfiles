@@ -41,9 +41,10 @@ NeoBundle 'Shougo/vimproc.vim', {
 \ }
 
 NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'taichouchou2/html5.vim'
+NeoBundle 'othree/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/vimfiler'
@@ -58,7 +59,7 @@ NeoBundle 'tpope/vim-haml'
 NeoBundle 'kmnk/vim-unite-giti'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'Yggdroot/indentLine'
-NeoBundle 'jiangmiao/auto-pairs'
+"NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
@@ -68,6 +69,7 @@ NeoBundle 'tyru/skk.vim'
 NeoBundle 'tyru/skkdict.vim'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'thinca/vim-quickrun'
 
 if !has('gui_running')
     NeoBundle 'tyru/skk.vim'

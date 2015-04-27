@@ -23,7 +23,6 @@ editor = vim
     st = status
     tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
     ca = commit -a
-    rs = rebase --skip
     rc = rebase --continue
     s = show --abbrev-commit --decorate
     b = branch -vv

@@ -1,4 +1,4 @@
-alias today='vim ~/Projects/whitebase/repos/today.md'
+alias today='vim ~/Projects/sweet/whitebase/repos/today.md'
 alias gca='git commit -a'
 alias co='git checkout `git branch | peco`'
 alias production="DATABASE_URL='`heroku config:get DATABASE_URL --app=ubiregi-server`'"
