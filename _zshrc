@@ -47,20 +47,6 @@ function gg() {
     fi
 }
 
-function ggg() {
-    PECO_SELS=`git grep -n $1 | peco`
-    if [ "$?" -eq 0 ]; then
-      mvim `echo $PECO_SELS | awk -F":" '{ print "+" $2 " " $1 }'`
-    fi
-}
-
-function ga() {
-    PECO_SELS=`git st -s | peco`
-    if [ "$?" -eq 0 ]; then
-      git add `echo $PECO_SELS | awk -F" " '{ print $2 }'`
-    fi
-}
-
 function gst() {
     PECO_SELS=`git st -s | peco`
     if [ "$?" -eq 0 ]; then
@@ -73,6 +59,14 @@ function fixup() {
     if [ "$?" -eq 0 ]; then
       git commit --fixup `echo $PECO_SELS | awk -F" " '{ print $1 }'`
     fi
+}
+
+function git-hash() {
+    git log --pretty="%h %s(%an) %d" | peco --prompt "GIT HASH>" | awk '{ print $1 }'
+}
+
+function git-changed-files() {
+    git status -s | peco --prompt "GIT CHANGED FILES>" | awk '{ print $2 }'
 }
 
 echo
