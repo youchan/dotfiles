@@ -28,5 +28,6 @@ editor = vim
     b = branch -vv
     g = grep -n
     squash = rebase -i --autosquash
+    fixup = commit --fixup
 [push]
 	default = simple

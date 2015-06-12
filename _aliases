@@ -5,7 +5,8 @@ alias -g R='`git remote | peco --prompt "GIT REMOTE>" | head -n 1`'
 alias -g H='$(git-hash)'
 alias -g F='$(git-changed-files)'
 alias co='git checkout `git branch | peco`'
-alias production="DATABASE_URL='`heroku config:get DATABASE_URL --app=ubiregi-server`'"
+alias -g P="DATABASE_URL='`heroku config:get DATABASE_URL --app=ubiregi-server`'"
+alias -g C="RAILS_ENV=concerto"
 alias vm='PECO_SELS=`ls ./app/models/**/*.rb | peco`; test $? -eq 0 && vim $PECO_SELS'
 alias vc='PECO_SELS=`ls ./app/controllers/**/*.rb | peco`; test $? -eq 0 && vim $PECO_SELS'
 alias vv='PECO_SELS=`ls ./app/views/**/*.haml | peco`; test $? -eq 0 && vim $PECO_SELS'
