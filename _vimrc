@@ -1,4 +1,4 @@
-:colorscheme elflord
+:colorscheme peachpuff
 
 set nocompatible
 set clipboard=unnamed
@@ -70,6 +70,8 @@ NeoBundle 'tyru/skkdict.vim'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'tyru/caw.vim.git'
+NeoBundle 'wakatime/vim-wakatime'
 
 if !has('gui_running')
     NeoBundle 'tyru/skk.vim'
@@ -104,6 +106,8 @@ NeoBundleLazy 'alpaca-tc/alpaca_rails_support', {
      \   ]
      \ }}
 call neobundle#end()
+
+autocmd QuickFixCmdPost *grep* cwindow
 
 "-----------------------------------------
 " neocomplete
@@ -231,12 +235,14 @@ inoremap <C-E> <C-R>=strftime("%H:%M:%S")<CR>
 inoremap <C-F> <Right>
 inoremap <C-B> <Left>
 inoremap <C-H> <BS>
-nnoremap <C-G> :GStatus<CR>
+nnoremap ; $
+nnoremap \ @
 nnoremap <C-P> :bp<CR>
 nnoremap <C-N> :bn<CR>
 nnoremap <C-K> <c-u>
 nnoremap <C-J> <c-d>
 nnoremap <C-B>d :bd<CR>
+nnoremap <C-D> :bd<CR>
 nnoremap <C-B><C-D> :bd!<CR>
 nnoremap <C-B>1 <ESC>:b1<CR>
 nnoremap <C-B>2 <ESC>:b2<CR>
@@ -282,6 +288,9 @@ nmap <Leader>o <Plug>(openbrowser-open)
 vmap <Leader>o <Plug>(openbrowser-open)
 " ググる
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
+
+nmap <Leader>c <Plug>(caw:i:toggle)
+vmap <Leader>c <Plug>(caw:i:toggle)
 
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 

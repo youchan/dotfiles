@@ -3,7 +3,16 @@ export VIM_APP_DIR='/usr/local/Cellar/macvim/current/MacVim.app'
 export LLVM_HOME='/usr/local/opt/llvm'
 export GRADLE_HOME=$HOME/lib/gradle-2.3
 export SCALA_HOME=$HOME/lib/scala-2.11.5
-export PATH="$HOME/bin:$SCALA_HOME/bin:$LLVM_HOME/bin:/usr/local/bin:$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/bin:/opt/local/bin:/opt/local/sbin:$SCALA_HOME/bin:$LLVM_HOME/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:$HOME/.rbenv/bin:$PATH"
 
+export SCREENEXCHANGE=$HOME/.screen_exchange
+export SCREEN_MSGMINWAIT=1
+export CLIPBOARD=$HOME/.clipboard
+export CLMAXHIST=20
+export CLSEP=$'\x07' # $'\x07' is BEL
+export CLX="pbcopy" #xsel/xclip
+export CLXOS="pbcopy"
+#export URXVT_PERL_LIB=$HOME/.urxvt/ext
+#
 eval "$(rbenv init -)"
 eval "$(hub alias -s)"

@@ -4,6 +4,7 @@ autoload -Uz vcs_info
 
 setopt prompt_subst
 export LSCOLORS=gxfxcxdxbxegedabagacad
+
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 EDITOR='vim'
 PROMPT=$'%#%{\e[m%}%'"{%} "

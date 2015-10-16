@@ -22,6 +22,7 @@ editor = vim
     co = checkout
     st = status
     tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
+    ln = log --name-status
     ca = commit -a
     rc = rebase --continue
     s = show --abbrev-commit --decorate
@@ -31,3 +32,7 @@ editor = vim
     fixup = commit --fixup
 [push]
 	default = simple
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
