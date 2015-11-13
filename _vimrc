@@ -281,6 +281,9 @@ nnoremap [unite]rs :Unite rails/stylesheet<CR>
 nnoremap [unite]gb :Unite giti/branch<CR>
 nnoremap [unite]gs :Unite giti/status<CR>
 nnoremap [unite]gl :Unite giti/log<CR>
+nmap [unite]gg :Unite giti/grep<CR>
+nmap [unite]ggp :Unite giti/grep<CR><C-R>"<CR>
+nmap [unite]gg* yiw:Unite giti/grep<CR><C-R>"<CR>
 
 let mapleader = ","
 
