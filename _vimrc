@@ -1,4 +1,5 @@
-:colorscheme peachpuff
+:colorscheme elflord
+set background=dark
 
 set nocompatible
 set clipboard=unnamed
