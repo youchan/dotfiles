@@ -4,10 +4,29 @@ autoload -Uz vcs_info
 
 setopt prompt_subst
 export LSCOLORS=gxfxcxdxbxegedabagacad
+export CLICOLOR=1
+
+export SCREENEXCHANGE=$HOME/.screen_exchange
+export SCREEN_MSGMINWAIT=1
+
+export HISTFILE=${HOME}/.zsh_history
+export HISTSIZE=2000
+export SAVEHIST=10000
+setopt hist_ignore_dups
+setopt share_history
+setopt EXTENDED_HISTORY
+
+export CLIPBOARD=$HOME/.clipboard
+export CLMAXHIST=20
+export CLSEP=$'\x07' # $'\x07' is BEL
+export CLX="pbcopy" #xsel/xclip
+export CLXOS="pbcopy"
 
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 EDITOR='vim'
 PROMPT=$'%#%{\e[m%}%'"{%} "
+
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' formats '(%b)'
@@ -66,9 +85,17 @@ function git-hash() {
     git log --pretty="%h %s(%an) %d" | peco --prompt "GIT HASH>" | awk '{ print $1 }'
 }
 
+function git-hash2() {
+    git log HEAD..master --pretty="%h %s(%an) %d" | peco --prompt "GIT HASH>" | awk '{ print $1 }'
+}
+
 function git-changed-files() {
     git status -s | peco --prompt "GIT CHANGED FILES>" | awk '{ print $2 }'
 }
 
+function propen() {
+    local current_branch_name=$(git symbolic-ref --short HEAD | xargs ruby -ruri -e 'puts URI.escape(ARGV[0])')
+    hub browse -- pull/${current_branch_name}
+}
 echo
 fortune

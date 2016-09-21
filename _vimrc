@@ -1,5 +1,6 @@
-:colorscheme elflord
 set background=dark
+set t_Co=256
+colorscheme Tomorrow-Night-Eighties
 
 set nocompatible
 set clipboard=unnamed
@@ -16,6 +17,7 @@ augroup vimrc
     autocmd! filetype html setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd! filetype css  setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd! filetype scss  setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd! filetype javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd! filetype coffee  setlocal shiftwidth=2 tabstop=2 softtabstop=2
     autocmd! filetype feature  setlocal shiftwidth=2 tabstop=2 softtabstop=2
 augroup END
@@ -41,51 +43,76 @@ NeoBundle 'Shougo/vimproc.vim', {
 \    },
 \ }
 
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'othree/html5.vim'
-NeoBundle 'taichouchou2/vim-javascript'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'Shougo/unite.vim'
-"NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/vimfiler'
-"NeoBundle 'vim-scripts/buftabs'
+NeoBundle 'Shougo/context_filetype.vim'
+NeoBundle 'chrisbra/Colorizer'
 "NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-cucumber'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-pathogen'
 NeoBundle 'tacroe/unite-mark'
-NeoBundle 'tpope/vim-haml'
 NeoBundle 'kmnk/vim-unite-giti'
-NeoBundle 'airblade/vim-gitgutter'
 "NeoBundle 'Yggdroot/indentLine'
-"NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'basyura/unite-rails'
 NeoBundle 'tyru/eskk.vim'
-"NeoBundle 'tyru/skkdict.vim'
+NeoBundle 'tyru/skkdict.vim'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tyru/caw.vim.git'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'wakatime/vim-wakatime'
+NeoBundle 'tpope/vim-afterimage'
+NeoBundle 'szw/vim-tags'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 
-if !has('gui_running')
-    NeoBundle 'tyru/skk.vim'
-    NeoBundle 'vim-scripts/buftabs'
-end
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'othree/html5.vim'
+"NeoBundle 'taichouchou2/vim-javascript'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'tpope/vim-cucumber'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'basyura/unite-rails'
 
-NeoBundleLazy 'alpaca-tc/alpaca_tags', {
-    \ 'depends': ['Shougo/vimproc', 'Shougo/unite.vim'],
+" if !has('gui_running')
+"     NeoBundle 'tyru/skk.vim'
+"     NeoBundle 'vim-scripts/buftabs'
+" end
+
+NeoBundleLazy 'kannokanno/previm', {
     \ 'autoload' : {
-    \   'commands' : ['Tags', 'TagsUpdate', 'TagsSet', 'TagsBundle', 'TagsCleanCache'],
-    \   'unite_sources' : ['tags']
+    \   'commands' : [ 'PrevimOpen' ]
     \ }}
 
+NeoBundleLazy 'AndrewRadev/inline_edit.vim', {
+    \ 'autoload' : {
+    \   'commands' : [ 'InlineEdit' ]
+    \ }}
+
+NeoBundleLazy 'lambdalisue/vim-gita', {
+    \ 'autoload': {
+    \   'commands': ['Gita'],
+    \}}
+
+NeoBundleLazy 'scrooloose/syntastic', {
+    \ 'autoload' : {
+    \   'commands': ['SyntasticCheck']
+    \}}
+
+
+" NeoBundleLazy 'alpaca-tc/alpaca_tags', {
+"     \ 'depends': ['Shougo/vimproc', 'Shougo/unite.vim'],
+"     \ 'autoload' : {
+"     \   'commands' : ['Tags', 'TagsUpdate', 'TagsSet', 'TagsBundle', 'TagsCleanCache'],
+"     \   'unite_sources' : ['tags']
+"     \ }}
+"
 NeoBundleLazy 'alpaca-tc/beautify.vim', {
     \ 'autoload' : {
     \   'commands' : [
@@ -96,16 +123,21 @@ NeoBundleLazy 'alpaca-tc/beautify.vim', {
     \ ]
     \ }}
 
-NeoBundleLazy 'alpaca-tc/alpaca_rails_support', {
-     \ 'depends' : ['Shougo/neocomplete.vim', 'tpope/vim-rails', 'Shougo/vimproc', 'Shougo/unite.vim'],
-     \ 'autoload': {
-     \   'insert' : 1,
-     \   'unite_sources' : 'rails_support/locales',
-     \   'commands' : [
-     \     'RSCreateRoutesCache', 'RSCleanCache',
-     \     'RSShowLocale', 'RSCreateLocaleCache',
-     \   ]
-     \ }}
+" NeoBundleLazy 'alpaca-tc/alpaca_rails_support', {
+"      \ 'depends' : ['Shougo/neocomplete.vim', 'tpope/vim-rails', 'Shougo/vimproc', 'Shougo/unite.vim'],
+"      \ 'autoload': {
+"      \   'insert' : 1,
+"      \   'unite_sources' : 'rails_support/locales',
+"      \   'commands' : [
+"      \     'RSCreateRoutesCache', 'RSCleanCache',
+"      \     'RSShowLocale', 'RSCreateLocaleCache',
+"      \   ]
+"      \ }}
+
+NeoBundleLazy 'airblade/vim-gitgutter', {
+    \ 'autoload' : {
+    \   'commands' : [ 'GitGutterEnable' ]
+    \ }}
 call neobundle#end()
 
 autocmd QuickFixCmdPost *grep* cwindow
@@ -171,12 +203,17 @@ let g:indentLine_faster = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_mode_map = {'mode': 'passive'} 
-augroup AutoSyntastic
-    autocmd!
-    autocmd  BufWritePost * SyntasticCheck
-augroup END
+" augroup AutoSyntastic
+"     autocmd!
+"     autocmd  BufWritePost * SyntasticCheck
+" augroup END
 "-----------------------------------------
 
+"-----------------------------------------
+" vim-tags
+let g:vim_tags_project_tags_command = "/usr/local/bin/ctags -R {OPTIONS} {DIRECTORY} 2>/dev/null"
+let g:vim_tags_gems_tags_command = "/usr/local/bin/ctags -R {OPTIONS} `bundle show --paths` 2>/dev/null"
+"-----------------------------------------
 
 "-----------------------------------------
 " mark auto reg
@@ -201,19 +238,34 @@ function! s:AutoMarkrement()
 endfunction
 "-----------------------------------------
 
+
+"-----------------------------------------
+" previm setting
+
+augroup PrevimSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+"-----------------------------------------
+
+
 "-----------------------------------------
 " skk.vim
 " http://peryaudo.hatenablog.com/entry/20100505/1273048637
 if !has('gui_running')
-    let skk_jisyo = '~/.skk-jisyo'
-    let skk_large_jisyo = '~/Library/Application Support/AquaSKK/SKK-JISYO.L'
-    let skk_auto_save_jisyo = 1
-    let skk_keep_state = 1
-    let skk_egg_like_newline = 1
-    let skk_show_annotation = 1
+    " let skk_jisyo = '~/.skk-jisyo'
+    " let skk_large_jisyo = '~/Library/Application Support/AquaSKK/SKK-JISYO.L'
+    " let skk_auto_save_jisyo = 1
+    " let skk_keep_state = 1
+    " let skk_egg_like_newline = 1
+    " let skk_show_annotation = 1
+    let g:eskk#directory = "~/.eskk"
+    let g:eskk#dictionary = { 'path': "~/.skk-jisyo", 'sorted': 0, 'encoding': 'utf-8', }
+    let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp', }
     let skk_use_face = 1
 end
 "-----------------------------------------
+
 
 "let g:giti_log_pretty_format='%h %s (%an)%d'
 
@@ -272,15 +324,16 @@ nnoremap [unite] <NOP>
 nmap <Space> [unite]
 nnoremap [unite]m :Unite mark<CR>
 nnoremap [unite]b :Unite buffer<CR>
-nnoremap [unite]f :Unite file<CR>
+nnoremap [unite]f :VimFiler -split -horizontal -force-quit<CR>
+nnoremap [unite]ff :VimFiler -split -simple -winwidth=35 -no-quit<CR>
 nnoremap [unite]rm :Unite rails/model<CR>
 nnoremap [unite]rc :Unite rails/controller<CR>
 nnoremap [unite]rv :Unite rails/view<CR>
 nnoremap [unite]rj :Unite rails/javascript<CR>
 nnoremap [unite]rs :Unite rails/stylesheet<CR>
-nnoremap [unite]gb :Unite giti/branch<CR>
-nnoremap [unite]gs :Unite giti/status<CR>
-nnoremap [unite]gl :Unite giti/log<CR>
+nnoremap [unite]gb :Gita blame<CR>
+nnoremap [unite]gs :Gita status<CR>
+nnoremap [unite]gl :Gita log<CR>
 nmap [unite]gg :Unite giti/grep<CR>
 nmap [unite]ggp :Unite giti/grep<CR><C-R>"<CR>
 nmap [unite]gg* yiw:Unite giti/grep<CR><C-R>"<CR>
@@ -293,8 +346,8 @@ vmap <Leader>o <Plug>(openbrowser-open)
 " ググる
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 
-nmap <Leader>c <Plug>(caw:i:toggle)
-vmap <Leader>c <Plug>(caw:i:toggle)
+nmap <Leader>c <Plug>(caw:hatpos:toggle)
+vmap <Leader>c <Plug>(caw:hatpos:toggle)
 
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 

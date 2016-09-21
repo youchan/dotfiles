@@ -30,6 +30,7 @@ editor = vim
     g = grep -n
     squash = rebase -i --autosquash
     fixup = commit --fixup
+    cp = cherry-pick
 [push]
 	default = simple
 [filter "lfs"]

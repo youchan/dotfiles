@@ -1,11 +1,12 @@
-alias today='vim ~/Projects/sweet/whitebase/repos/today.md'
+alias today='cd ~/Projects/sweet/whitebase/repos; vim today.md'
 alias gca='git commit -a'
 alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'   
 alias -g R='`git remote | peco --prompt "GIT REMOTE>" | head -n 1`'
 alias -g H='$(git-hash)'
+alias -g H2='$(git-hash2)'
 alias -g F='$(git-changed-files)'
 alias co='git checkout `git branch | peco`'
-alias -g P="DATABASE_URL='`heroku config:get DATABASE_URL --app=ubiregi-server`'"
+#alias -g P="DATABASE_URL='`heroku config:get DATABASE_URL --app=ubiregi-server`'"
 alias -g C="RAILS_ENV=concerto"
 alias vm='PECO_SELS=`ls ./app/models/**/*.rb | peco`; test $? -eq 0 && vim $PECO_SELS'
 alias vc='PECO_SELS=`ls ./app/controllers/**/*.rb | peco`; test $? -eq 0 && vim $PECO_SELS'
@@ -16,4 +17,6 @@ alias mvc='PECO_SELS=`ls ./app/controllers/**/*.rb | peco`; test $? -eq 0 && mvi
 alias mvv='PECO_SELS=`ls ./app/views/**/*.haml | peco`; test $? -eq 0 && mvim $PECO_SELS'
 alias mvj='PECO_SELS=`ls ./app/assets/javascripts/**/*.(coffee|js) | peco`; test $? -eq 0 && mvim $PECO_SELS'
 alias gti='git'
+alias g='git'
 alias mkpdf='pandoc -V documentclass=ltjsarticle --latex-engine=lualatex'
+alias be='bundle exec'
