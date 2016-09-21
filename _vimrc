@@ -1,3 +1,6 @@
+" Note: Skip initialization for vim-tiny or vim-small.
+if 0 | endif
+
 set background=dark
 set t_Co=256
 colorscheme Tomorrow-Night-Eighties
@@ -63,7 +66,7 @@ NeoBundle 'tyru/skkdict.vim'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tyru/caw.vim.git'
+NeoBundle 'tyru/caw.vim'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'wakatime/vim-wakatime'
@@ -139,6 +142,10 @@ NeoBundleLazy 'airblade/vim-gitgutter', {
     \   'commands' : [ 'GitGutterEnable' ]
     \ }}
 call neobundle#end()
+
+filetype plugin indent on
+
+NeoBundleCheck
 
 autocmd QuickFixCmdPost *grep* cwindow
 
