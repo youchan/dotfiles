@@ -12,6 +12,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set nofoldenable
 
 augroup vimrc
     autocmd! filetype perl setlocal shiftwidth=4 tabstop=2 softtabstop=2
