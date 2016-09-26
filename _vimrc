@@ -302,8 +302,8 @@ nnoremap ; $
 nnoremap \ @
 nnoremap <C-P> :bp<CR>
 nnoremap <C-N> :bn<CR>
-nnoremap <C-K> <c-u>
-nnoremap <C-J> <c-d>
+nnoremap <C-K> <C-U>
+nnoremap <C-J> <C-D>
 nnoremap <C-B>d :bd<CR>
 nnoremap <C-D> :bd<CR>
 nnoremap <C-B><C-D> :bd!<CR>
