@@ -366,3 +366,6 @@ au BufRead,BufNewFile *.md setf markdown
 
 au BufRead,BufNewFile *.hamlc set filetype=haml
 au BufRead,BufNewFile *.hamlc setf haml
+
+
+au BufNewFile,BufRead *.jb set filetype=ruby
