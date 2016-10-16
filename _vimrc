@@ -74,6 +74,8 @@ NeoBundle 'wakatime/vim-wakatime'
 NeoBundle 'tpope/vim-afterimage'
 NeoBundle 'szw/vim-tags'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'yuku-t/vim-ref-ri'
 
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'othree/html5.vim'
