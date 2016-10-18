@@ -1,0 +1,28 @@
+URxvt.termName: rxvt-256color
+URxvt.foreground: #B0A098
+URxvt.background: #00180A
+URxvt.allow_bold: false
+#URxvt.font: xft:Ricty:size=13.5:antialias=true, xft:DejaVu Sans Mono:size=12
+URxvt.font: xft:Ricty Discord:size=13.5:antialias=true, xft:DejaVu Sans Mono:size=12
+#URxvt.font: xft:Input Mono:size=13.5:antialias=true
+
+#URxvt.font: xft:Monaco:style=Regular-Mono:size=11:antialias=true,xft:Osaka:style=Regular-Mono:size=11:antialias=true
+
+URxvt.geometry: 180x48
+URxvt.scrollBar: false
+URxvt.cursorBlink: true
+
+URxvt.perl-lib: /Users/youchan/.urxvt/ext
+URxvt.perl-ext-common: default,clipboard,keyboard-select,url-select,tabbedex
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: open
+URxvt.keysym.M-t: perl:tabbedex:new_tab
+URxvt.keysym.Meta-Shift-0x7b: perl:tabbedex:prev_tab
+URxvt.keysym.Meta-Shift-0x7d: perl:tabbedex:next_tab
+
+URxvt.clipboard.copycmd: pbcopy
+URxvt.clipboard.pastecmd: pbpaste
