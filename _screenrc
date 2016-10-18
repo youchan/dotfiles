@@ -1,0 +1,14 @@
+defencoding utf8
+encoding utf8 utf8
+
+attrcolor b ".I"
+defbce on 
+termcapinfo xterm* 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+startup_message off
+#escape "^Gg"
+defscrollback 10000
+
+bindkey -m ' ' eval 'stuff " "' writebuf 'exec sh -c "pbcopy < /tmp/screen-exchange"'
+bindkey -m 'Y' eval 'stuff "Y"' writebuf 'exec sh -c "pbcopy < /tmp/screen-exchange"'
+bindkey -m 'W' eval 'stuff "W"' writebuf 'exec sh -c "pbcopy < /tmp/screen-exchange"'
