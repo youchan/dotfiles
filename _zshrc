@@ -26,7 +26,11 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 EDITOR='vim'
 PROMPT=$'%#%{\e[m%}%'"{%} "
 
+export PATH="$HOME/bin:/opt/local/bin:/opt/local/sbin:/Library/TeX/texbin:$SCALA_HOME/bin:$LLVM_HOME/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:$HOME/.rbenv/bin:$PATH"
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+
+eval "$(rbenv init -)"
+eval "$(hub alias -s)"
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' formats '(%b)'

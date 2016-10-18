@@ -1,13 +1,10 @@
 #export VIM_HOME='/Applications/MacVim.app/Contents/MacOS'
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7.0_xx`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8.0_xx`
 export VIM_APP_DIR='/usr/local/Cellar/macvim/current/MacVim.app'
 export LLVM_HOME='/usr/local/opt/llvm'
 export GRADLE_HOME=$HOME/lib/gradle-2.4
 export SCALA_HOME=$HOME/lib/scala-2.11.5
-export PATH="$HOME/bin:/opt/local/bin:/opt/local/sbin:/Library/TeX/texbin:$SCALA_HOME/bin:$LLVM_HOME/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:$HOME/.rbenv/bin:$PATH"
 export APPENGINE_SDK_HOME=/usr/local/opt/app-engine-java/libexec
 
 #export URXVT_PERL_LIB=$HOME/.urxvt/ext
 #
-eval "$(rbenv init -)"
-eval "$(hub alias -s)"
