@@ -23,6 +23,7 @@ install vim --with-lua
 install zsh
 install ricty
 install fortune
+install nodebrew
 
 cask install google-chrome
 cask install skype
