@@ -28,10 +28,10 @@ cd $HOME/dotfile; cp my.cnf /usr/local/etc/my.cnf
 sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 chsh -s /usr/local/bin/zsh
 
-cd "$HOME"; ln -s dotfile/_vimrc ~/.vimrc
-cd "$HOME"; ln -s dotfile/_zshenv ~/.zshenv
-cd "$HOME"; ln -s dotfile/_zshrc ~/.zshrc
-cd "$HOME"; ln -s dotfile/_aliases ~/.aliases
-cd "$HOME"; ln -s dotfile/_hash ~/.hash
-cd "$HOME"; ln -s dotfile/_gitconfig ~/.gitconfig
-cd "$HOME"; ln -s dotfile/_gitignore ~/.gitignore
+cd "$HOME"; ln -s dotfiles/_vimrc .vimrc
+cd "$HOME"; ln -s dotfiles/_zshenv .zshenv
+cd "$HOME"; ln -s dotfiles/_zshrc .zshrc
+cd "$HOME"; ln -s dotfiles/_aliases .aliases
+cd "$HOME"; ln -s dotfiles/_hash .hash
+cd "$HOME"; ln -s dotfiles/_gitconfig .gitconfig
+cd "$HOME"; ln -s dotfiles/_gitignore .gitignore

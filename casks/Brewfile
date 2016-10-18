@@ -3,11 +3,13 @@ upgrade
 
 tap homebrew/versions
 tap homebrew/binary
+tap sanemat/font
 
 install mysql
 install imagemagick
 install pkg-config
 
+install homebrew/X11/xquartz
 install docker boot2docker
 cask install virtualbox
 
@@ -19,6 +21,7 @@ install hub
 install vifm
 install vim --with-lua
 install zsh
+install ricty
 install fortune
 
 cask install google-chrome
@@ -28,3 +31,4 @@ cask install dashlane
 cask install pandoc
 cask install item2
 cask install peco
+
