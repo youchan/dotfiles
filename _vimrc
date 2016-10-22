@@ -51,6 +51,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/context_filetype.vim'
+NeoBundle 'vim-scripts/vim-auto-save'
 NeoBundle 'chrisbra/Colorizer'
 "NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
@@ -163,6 +164,11 @@ let g:neocomplete#enable_at_startup=1
 "let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "-----------------------------------------
 
+
+"-----------------------------------------
+" for vim-auto-save
+let g:auto_save = 1
+"-----------------------------------------
 
 "-----------------------------------------
 " alpaca_tags
