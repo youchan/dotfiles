@@ -12,7 +12,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set nofoldenable
+"set nofoldenable
 
 augroup vimrc
     autocmd! filetype perl setlocal shiftwidth=4 tabstop=2 softtabstop=2
@@ -53,44 +53,38 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/context_filetype.vim'
 NeoBundle 'vim-scripts/vim-auto-save'
 NeoBundle 'chrisbra/Colorizer'
-"NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-pathogen'
+NeoBundle 'tpope/vim-markdown'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-afterimage'
+NeoBundle 'tpope/vim-cucumber'
+NeoBundle 'tpope/vim-haml'
 NeoBundle 'tacroe/unite-mark'
 NeoBundle 'kmnk/vim-unite-giti'
-"NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'tyru/eskk.vim'
 NeoBundle 'tyru/skkdict.vim'
+NeoBundle 'tyru/caw.vim'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tyru/caw.vim'
+NeoBundle 'thinca/vim-ref'
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'wakatime/vim-wakatime'
-NeoBundle 'tpope/vim-afterimage'
 NeoBundle 'szw/vim-tags'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
-NeoBundle 'thinca/vim-ref'
 NeoBundle 'yuku-t/vim-ref-ri'
+NeoBundle 'Konfekt/FastFold'
 
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'othree/html5.vim'
-"NeoBundle 'taichouchou2/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'derekwyatt/vim-scala'
-NeoBundle 'tpope/vim-cucumber'
-NeoBundle 'tpope/vim-haml'
 NeoBundle 'basyura/unite-rails'
-
-" if !has('gui_running')
-"     NeoBundle 'tyru/skk.vim'
-"     NeoBundle 'vim-scripts/buftabs'
-" end
 
 NeoBundleLazy 'kannokanno/previm', {
     \ 'autoload' : {
@@ -112,13 +106,6 @@ NeoBundleLazy 'scrooloose/syntastic', {
     \   'commands': ['SyntasticCheck']
     \}}
 
-
-" NeoBundleLazy 'alpaca-tc/alpaca_tags', {
-"     \ 'depends': ['Shougo/vimproc', 'Shougo/unite.vim'],
-"     \ 'autoload' : {
-"     \   'commands' : ['Tags', 'TagsUpdate', 'TagsSet', 'TagsBundle', 'TagsCleanCache'],
-"     \   'unite_sources' : ['tags']
-"     \ }}
 "
 NeoBundleLazy 'alpaca-tc/beautify.vim', {
     \ 'autoload' : {
@@ -129,17 +116,6 @@ NeoBundleLazy 'alpaca-tc/beautify.vim', {
     \     }
     \ ]
     \ }}
-
-" NeoBundleLazy 'alpaca-tc/alpaca_rails_support', {
-"      \ 'depends' : ['Shougo/neocomplete.vim', 'tpope/vim-rails', 'Shougo/vimproc', 'Shougo/unite.vim'],
-"      \ 'autoload': {
-"      \   'insert' : 1,
-"      \   'unite_sources' : 'rails_support/locales',
-"      \   'commands' : [
-"      \     'RSCreateRoutesCache', 'RSCleanCache',
-"      \     'RSShowLocale', 'RSCreateLocaleCache',
-"      \   ]
-"      \ }}
 
 NeoBundleLazy 'airblade/vim-gitgutter', {
     \ 'autoload' : {
@@ -264,7 +240,11 @@ augroup PrevimSettings
 augroup END
 
 let g:previm_open_cmd = "open -a 'Google Chrome'"
+"-----------------------------------------
 
+"-----------------------------------------
+" markdown-vim
+let g:markdown_fenced_languages = ['ruby']
 "-----------------------------------------
 
 

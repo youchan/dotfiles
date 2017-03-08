@@ -18,6 +18,7 @@ alias mvv='PECO_SELS=`ls ./app/views/**/*.haml | peco`; test $? -eq 0 && mvim $P
 alias mvj='PECO_SELS=`ls ./app/assets/javascripts/**/*.(coffee|js) | peco`; test $? -eq 0 && mvim $PECO_SELS'
 alias gti='git'
 alias g='git'
+alias wip='git add .; git commit -m wip'
 alias mkpdf='pandoc -V documentclass=ltjsarticle --latex-engine=lualatex'
 alias be='bundle exec'
 alias b='bundle'
