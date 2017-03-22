@@ -5,7 +5,6 @@ set background=dark
 set t_Co=256
 colorscheme Tomorrow-Night-Eighties
 
-set nocompatible
 set clipboard=unnamed
 set fileencodings=utf-8,cp932,sjis,iso-2022-jp,euc-jp
 set tabstop=4
@@ -15,15 +14,22 @@ set expandtab
 "set nofoldenable
 
 augroup vimrc
-    autocmd! filetype perl setlocal shiftwidth=4 tabstop=2 softtabstop=2
-    autocmd! filetype ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd! filetype haml setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd! filetype html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd! filetype css  setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd! filetype scss  setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd! filetype javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd! filetype coffee  setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    autocmd! filetype feature  setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd!
+    autocmd filetype perl setlocal shiftwidth=4 tabstop=2 softtabstop=2
+    autocmd filetype ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd filetype haml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd filetype html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd filetype css  setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd filetype scss  setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd filetype javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd filetype coffee  setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd filetype feature  setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+    autocmd BufRead,BufNewFile *.md set filetype=markdown
+    autocmd BufRead,BufNewFile *.hamlc set filetype=haml
+    autocmd BufNewFile,BufRead *.jb set filetype=ruby
+
+    autocmd QuickFixCmdPost *grep* cwindow
 augroup END
 
 " viminfo
@@ -126,8 +132,6 @@ call neobundle#end()
 filetype plugin indent on
 
 NeoBundleCheck
-
-autocmd QuickFixCmdPost *grep* cwindow
 
 "-----------------------------------------
 " neocomplete
@@ -233,12 +237,6 @@ endfunction
 
 "-----------------------------------------
 " previm setting
-
-augroup PrevimSettings
-    autocmd!
-    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-augroup END
-
 let g:previm_open_cmd = "open -a 'Google Chrome'"
 "-----------------------------------------
 
@@ -325,6 +323,8 @@ nmap <Down> <Plug>(yankround-next)
 
 vnoremap ; $h
 vnoremap a ggvvG$
+vnoremap <C-K> <C-U>
+vnoremap <C-J> <C-D>
 
 nnoremap <silent>m :<C-u>call <sid>AutoMarkrement()<CR>
 
@@ -359,11 +359,3 @@ vmap <Leader>c <Plug>(caw:hatpos:toggle)
 
 command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
-au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.md setf markdown
-
-au BufRead,BufNewFile *.hamlc set filetype=haml
-au BufRead,BufNewFile *.hamlc setf haml
-
-
-au BufNewFile,BufRead *.jb set filetype=ruby

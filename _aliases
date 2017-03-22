@@ -1,4 +1,5 @@
 alias today='cd ~/Projects/sweet/whitebase/repos; vim today.md'
+alias diary='vim ~/Projects/footstep-diary/data/`date "+%Y-%m-%d"`.md'
 alias gca='git commit -a'
 alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'   
 alias -g R='`git remote | peco --prompt "GIT REMOTE>" | head -n 1`'

@@ -22,15 +22,20 @@ export CLSEP=$'\x07' # $'\x07' is BEL
 export CLX="pbcopy" #xsel/xclip
 export CLXOS="pbcopy"
 
+export GOPATH=$HOME/gocode
+
+export PYENV_ROOT="$HOME/.pyenv"
+
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 EDITOR='vim'
 PROMPT=$'%#%{\e[m%}%'"{%} "
 
-export PATH="$HOME/bin:/opt/local/bin:/opt/local/sbin:/Library/TeX/texbin:$SCALA_HOME/bin:$LLVM_HOME/bin:/usr/local/bin:$HOME/.nodebrew/current/bin:$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.nodebrew/current/bin:$HOME/.rbenv/bin:$PYENV_ROOT/bin:$HOME/gocode/bin:/opt/local/bin:/opt/local/sbin:/Library/TeX/texbin:$SCALA_HOME/bin:$LLVM_HOME/bin:/usr/local/bin:$PATH"
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
 eval "$(rbenv init -)"
 eval "$(hub alias -s)"
+eval "$(pyenv init -)"
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' formats '(%b)'
