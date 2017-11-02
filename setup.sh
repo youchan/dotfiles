@@ -23,12 +23,13 @@ curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.s
 
 cd casks; make
 
-cd $HOME/dotfile; cp my.cnf /usr/local/etc/my.cnf
+cd $HOME/dotfiles; cp my.cnf /usr/local/etc/my.cnf
 
 sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
-chsh -s /usr/local/bin/zsh
+chsh -s /bin/zsh
 
 cd "$HOME"; ln -s dotfiles/_vimrc .vimrc
+cd "$HOME"; ln -s dotfiles/_eskk .eskk
 cd "$HOME"; ln -s dotfiles/_zshenv .zshenv
 cd "$HOME"; ln -s dotfiles/_zshrc .zshrc
 cd "$HOME"; ln -s dotfiles/_aliases .aliases

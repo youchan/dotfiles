@@ -4,6 +4,7 @@ upgrade
 tap homebrew/versions
 tap homebrew/binary
 tap sanemat/font
+tap codekitchen/dinghy
 
 install mysql
 install imagemagick
@@ -24,6 +25,9 @@ install zsh
 install ricty
 install fortune
 install nodebrew
+install hub
+install pyenv
+install fortune
 
 cask install google-chrome
 cask install skype
@@ -33,3 +37,6 @@ cask install pandoc
 cask install item2
 cask install peco
 
+cask install virtualbox
+install dinghy
+install docker docker-machine
