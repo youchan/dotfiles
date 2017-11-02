@@ -38,5 +38,6 @@ cask install item2
 cask install peco
 
 cask install virtualbox
+cask install vagrant
 install dinghy
 install docker docker-machine
