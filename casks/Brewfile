@@ -11,8 +11,6 @@ install imagemagick
 install pkg-config
 
 install homebrew/X11/xquartz
-install docker boot2docker
-cask install virtualbox
 
 install redis
 install phantomjs
@@ -41,3 +39,7 @@ cask install virtualbox
 cask install vagrant
 install dinghy
 install docker docker-machine
+cask install minikube
+install docker-machine-driver-xhyve
+
+cask install blender

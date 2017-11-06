@@ -25,6 +25,9 @@ cd casks; make
 
 cd $HOME/dotfiles; cp my.cnf /usr/local/etc/my.cnf
 
+sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+
 sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 chsh -s /bin/zsh
 

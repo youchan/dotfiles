@@ -3,7 +3,8 @@ if 0 | endif
 
 set background=dark
 set t_Co=256
-colorscheme Tomorrow-Night-Eighties
+"colorscheme Tomorrow-Night-Eighties
+colorscheme iceberg
 
 set clipboard=unnamed
 set fileencodings=utf-8,cp932,sjis,iso-2022-jp,euc-jp
@@ -55,6 +56,8 @@ NeoBundle 'Shougo/vimproc.vim', {
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/context_filetype.vim'
 NeoBundle 'vim-scripts/vim-auto-save'
@@ -91,6 +94,7 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'basyura/unite-rails'
+NeoBundle 'haya14busa/incsearch.vim'
 
 NeoBundleLazy 'kannokanno/previm', {
     \ 'autoload' : {
@@ -288,6 +292,10 @@ set hidden
 set matchpairs& matchpairs+=<:>
 
 hi SpecialKey ctermfg=18
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 inoremap <C-D> <C-R>=strftime("%Y-%m-%d")<CR>
 inoremap <C-E> <C-R>=strftime("%H:%M:%S")<CR>
