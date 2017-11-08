@@ -248,7 +248,8 @@ let g:previm_open_cmd = "open -a 'Google Chrome'"
 " markdown-vim
 let g:markdown_fenced_languages = ['ruby']
 "-----------------------------------------
-
+"
+let g:ref_refe_cmd = $HOME.'/.rbenv/shims/refe' "refeコマンドのパス
 
 "-----------------------------------------
 " skk.vim

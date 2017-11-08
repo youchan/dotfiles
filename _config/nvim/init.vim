@@ -13,8 +13,8 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-colorscheme Tomorrow-Night-Eighties
-"colorscheme iceberg
+"colorscheme Tomorrow-Night-Eighties
+colorscheme iceberg
 
 set statusline=%F%m%r%h%w%=\ [%{(&fenc!=''?&fenc:&enc)}/%{&ff}]\[%Y]\[%l,%v][%p%%]
 set laststatus=2
@@ -34,4 +34,11 @@ let g:neocomplete#enable_at_startup=1
 " for vim-auto-save
 let g:auto_save = 1
 
+"-----------------------------------------
+" markdown-vim
+let g:markdown_fenced_languages = ['cpp', 'ruby', 'json']
+
+"-----------------------------------------
+" ref
+let g:ref_refe_cmd = $HOME.'/.rbenv/shims/refe' "refeコマンドのパス
 "-----------------------------------------
