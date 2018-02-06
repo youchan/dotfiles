@@ -22,18 +22,13 @@ export CLSEP=$'\x07' # $'\x07' is BEL
 export CLX="pbcopy" #xsel/xclip
 export CLXOS="pbcopy"
 
-# export DOCKER_HOST=tcp://192.168.99.100:2376
-# export DOCKER_CERT_PATH=/Users/youchan/.docker/machine/machines/dinghy
-# export DOCKER_TLS_VERIFY=1
-# export DOCKER_MACHINE_NAME=dinghy
-
 export GOPATH=$HOME/gocode
 
 export PYENV_ROOT="$HOME/.pyenv"
 
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 EDITOR='vim'
-PROMPT=$'%#%{\e[m%}%'"{%} "
+PROMPT=$'%m %#%{\e[m%}%'"{%} "
 
 export PATH="$HOME/bin:$HOME/.nodebrew/current/bin:$HOME/.rbenv/bin:$PYENV_ROOT/bin:$HOME/gocode/bin:/opt/local/bin:/opt/local/sbin:/Library/TeX/texbin:$SCALA_HOME/bin:$LLVM_HOME/bin:/usr/local/bin:$PATH"
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
@@ -41,8 +36,14 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 
 eval "$(rbenv init -)"
-eval "$(hub alias -s)"
-eval "$(pyenv init -)"
+
+if which hub >/dev/null 2>&1; then
+  eval "$(hub alias -s)"
+fi
+
+if which pyenv >/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' formats '(%b)'
