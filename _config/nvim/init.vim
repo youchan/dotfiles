@@ -14,6 +14,7 @@ set shiftwidth=2
 set expandtab
 
 syntax on
+set nobackup
 set encoding=utf8
 set fileencoding=utf8
 set list
@@ -25,7 +26,6 @@ set hidden
 
 set matchpairs& matchpairs+=<:>
 "colorscheme Tomorrow-Night-Eighties
-colorscheme iceberg
 
 set statusline=%F%m%r%h%w%=\ [%{(&fenc!=''?&fenc:&enc)}/%{&ff}]\[%Y]\[%l,%v][%p%%]
 set laststatus=2
@@ -36,6 +36,8 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 runtime! init/*.vim
 
+colorscheme iceberg
+
 "-----------------------------------------
 " skk.vim
 " http://peryaudo.hatenablog.com/entry/20100505/1273048637
@@ -43,6 +45,7 @@ if !has('gui_running')
     let g:eskk#directory = "~/.eskk"
     let g:eskk#dictionary = { 'path': "~/.skk-jisyo", 'sorted': 0, 'encoding': 'utf-8', }
     let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp', }
+    let g:eskk#sub_dictionaries = [{ 'path': "~/.eskk/SKK-JISYO.emoji.utf8", 'sorted': 2, 'encoding': 'utf-8' }]
     let skk_use_face = 1
 end
 
@@ -62,4 +65,8 @@ let g:markdown_fenced_languages = ['cpp', 'ruby', 'json']
 "-----------------------------------------
 " ref
 let g:ref_refe_cmd = $HOME.'/.rbenv/shims/refe' "refeコマンドのパス
+
 "-----------------------------------------
+" for NERD Commenter
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'

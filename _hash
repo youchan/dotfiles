@@ -1,1 +1,3 @@
 hash -d P=~/Projects
+hash -d repos=~/Projects/sweet/whitebase/repos
+hash -d R=~/Projects/Retrieva

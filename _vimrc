@@ -95,6 +95,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'basyura/unite-rails'
 NeoBundle 'haya14busa/incsearch.vim'
+NeoBundle 'cocopon/colorswatch.vim'
 
 NeoBundleLazy 'kannokanno/previm', {
     \ 'autoload' : {
