@@ -2,17 +2,21 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+noremap <Up> gk
+noremap <Down> gj
+
 inoremap <C-D> <C-R>=strftime("%Y-%m-%d")<CR>
 inoremap <C-E> <C-R>=strftime("%H:%M:%S")<CR>
 inoremap <C-F> <Right>
 inoremap <C-B> <Left>
 inoremap <C-H> <BS>
 nnoremap ; $
+nnoremap <C-H> 0
 nnoremap \ @
 nnoremap <C-P> :bp<CR>
 nnoremap <C-N> :bn<CR>
-nnoremap <C-K> <C-U>
-nnoremap <C-J> <C-D>
+noremap <C-K> <C-U>
+noremap <C-J> <C-D>
 nnoremap <C-B>d :bd<CR>
 nnoremap <C-D> :bd<CR>
 nnoremap <C-B><C-D> :bd!<CR>
@@ -27,17 +31,22 @@ nnoremap <C-B>8 <ESC>:b8<CR>
 nnoremap <C-B>9 <ESC>:b9<CR>
 nnoremap <C-B>0 <ESC>:b10<CR>
 
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+
+noremap <silent> <ESC><ESC> :<C-u> set hlsearch!<CR>
+
 nmap p <Plug>(yankround-p)
 nmap P <Plug>(yankround-P)
 nmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
-nmap <Up> <Plug>(yankround-prev)
-nmap <Down> <Plug>(yankround-next)
+"nmap <Up> <Plug>(yankround-prev)
+"nmap <Down> <Plug>(yankround-next)
 
 vnoremap ; $h
+vnoremap <C-H> 0
 vnoremap a ggvvG$
-vnoremap <C-K> <C-U>
-vnoremap <C-J> <C-D>
 
 nnoremap <silent>m :<C-u>call <sid>AutoMarkrement()<CR>
 
@@ -66,5 +75,7 @@ nmap <Leader>o <Plug>(openbrowser-open)
 vmap <Leader>o <Plug>(openbrowser-open)
 " ググる
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
+
+map <Leader>r :set filetype=ruby<CR>
 
 tnoremap <silent> <C-[> <C-\><C-n>

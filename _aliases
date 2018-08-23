@@ -8,7 +8,6 @@ alias -g H='$(git-hash)'
 alias -g H2='$(git-hash2)'
 alias -g F='$(git-changed-files)'
 alias co='git checkout `git branch | peco`'
-#alias -g P="DATABASE_URL='`heroku config:get DATABASE_URL --app=ubiregi-server`'"
 alias -g C="RAILS_ENV=concerto"
 alias vm='PECO_SELS=`ls ./app/models/**/*.rb | peco`; test $? -eq 0 && nvim $PECO_SELS'
 alias vc='PECO_SELS=`ls ./app/controllers/**/*.rb | peco`; test $? -eq 0 && nvim $PECO_SELS'
@@ -33,4 +32,4 @@ alias dic='osx-dictionary'
 alias k='kubectl'
 alias kg='kubectl get'
 alias kd='kubectl describe'
-alias vim=nvim
+alias v=vim

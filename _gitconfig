@@ -5,7 +5,7 @@
 	keepBackup = true
 [core]
 	excludesfile = /Users/youchan/.gitignore
-editor = vim
+	editor = nvim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -24,6 +24,9 @@ editor = vim
     tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
     ln = log --name-status
     l = log -p --stat --reverse --abbrev-commit --decorate --topo-order
+    c = commit
+    cm = commit -m
+    cw = commit -m 'wip'
     ca = commit -a
     rc = rebase --continue
     rs = rebase --skip

@@ -12,6 +12,9 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+"set foldcolumn=2
+set foldlevel=0
+set whichwrap=b,s,<,>,[,]
 
 syntax on
 set nobackup
@@ -29,6 +32,10 @@ set matchpairs& matchpairs+=<:>
 
 set statusline=%F%m%r%h%w%=\ [%{(&fenc!=''?&fenc:&enc)}/%{&ff}]\[%Y]\[%l,%v][%p%%]
 set laststatus=2
+
+set conceallevel=2
+
+set packpath^=~/.config/nvim
 
 packadd minpac
 call minpac#init()
@@ -50,17 +57,16 @@ if !has('gui_running')
 end
 
 "-----------------------------------------
-" neocomplete
-let g:neocomplete#skip_auto_completion_time = '0.2'
-let g:neocomplete#enable_at_startup=1
-
-"-----------------------------------------
 " for vim-auto-save
 let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
+let g:auto_save_no_updatetime = 1
 
 "-----------------------------------------
 " markdown-vim
+"
 let g:markdown_fenced_languages = ['cpp', 'ruby', 'json']
+let g:gfm_syntax_emoji_conceal = 1
 
 "-----------------------------------------
 " ref
@@ -70,3 +76,14 @@ let g:ref_refe_cmd = $HOME.'/.rbenv/shims/refe' "refeコマンドのパス
 " for NERD Commenter
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
+
+"-----------------------------------------
+" deoplete
+let g:deoplete#enable_at_startup = 1
+
+" LanguageServer
+let g:LanguageClient_serverCommands = {
+    \ 'vue': ['vls'],
+    \ 'ts': ['typescript-language-server', '--stdio'],
+    \ 'rb': ['language_server-ruby']
+    \ }

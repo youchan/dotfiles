@@ -6,7 +6,11 @@ export GRADLE_HOME=$HOME/lib/gradle-2.4
 export SCALA_HOME=$HOME/lib/scala-2.11.5
 #export APPENGINE_SDK_HOME=/usr/local/opt/app-engine-java/libexec
 
+export EDITOR='nvim'
+
 export XDG_CONFIG_HOME="$HOME/.config"
+export DYLD_LIBRARY_PATH='/opt/intel/mkl/lib'
+export LD_LIBRARY_PATH='/opt/intel/mkl/lib'
 
 #export URXVT_PERL_LIB=$HOME/.urxvt/ext
 #
