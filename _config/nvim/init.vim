@@ -11,6 +11,7 @@ set clipboard=unnamed
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set autoindent
 set expandtab
 "set foldcolumn=2
 set foldlevel=0
@@ -82,8 +83,8 @@ let g:NERDDefaultAlign = 'left'
 let g:deoplete#enable_at_startup = 1
 
 " LanguageServer
-let g:LanguageClient_serverCommands = {
-    \ 'vue': ['vls'],
-    \ 'ts': ['typescript-language-server', '--stdio'],
-    \ 'rb': ['language_server-ruby']
-    \ }
+"let g:LanguageClient_serverCommands = {
+    "\ 'vue': ['vls'],
+    "\ 'ts': ['typescript-language-server', '--stdio'],
+    "\ 'rb': ['language_server-ruby']
+    "\ }

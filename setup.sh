@@ -26,8 +26,8 @@ cd casks; make
 
 cd $HOME/dotfiles; cp my.cnf /usr/local/etc/my.cnf
 
-sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+# sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+# sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 
 sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
 chsh -s /bin/zsh
@@ -40,3 +40,9 @@ cd "$HOME"; ln -s dotfiles/_aliases .aliases
 cd "$HOME"; ln -s dotfiles/_hash .hash
 cd "$HOME"; ln -s dotfiles/_gitconfig .gitconfig
 cd "$HOME"; ln -s dotfiles/_gitignore .gitignore
+cd "$HOME"; ln -s dotfiles/_config .config
+cd "$HOME"; ln -s dotfiles/_inputrc .inputrc
+cd "$HOME"; ln -s dotfiles/_screenrc .screenrc
+mkdir -p "$HOMNE/bin" 
+cd "$HOME/bin"; ln -s ../dotfiles/bin/dict dict
+
