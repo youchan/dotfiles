@@ -27,6 +27,7 @@ install hub
 install pyenv
 install fortune
 install jq
+install peco
 
 cask install google-chrome
 cask install skype
