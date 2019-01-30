@@ -82,9 +82,4 @@ let g:NERDDefaultAlign = 'left'
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
-" LanguageServer
-"let g:LanguageClient_serverCommands = {
-    "\ 'vue': ['vls'],
-    "\ 'ts': ['typescript-language-server', '--stdio'],
-    "\ 'rb': ['language_server-ruby']
-    "\ }
+let b:match_words = "<if>:<end>,<begin>:<end>,<def>:<end>,<class>:<end>"

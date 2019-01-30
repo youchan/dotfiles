@@ -43,10 +43,11 @@ nmap gp <Plug>(yankround-gp)
 nmap gP <Plug>(yankround-gP)
 "nmap <Up> <Plug>(yankround-prev)
 "nmap <Down> <Plug>(yankround-next)
+nnoremap yy y$
+nnoremap ya VggGy
 
 vnoremap ; $h
 vnoremap <C-H> 0
-vnoremap a ggvvG$
 
 nnoremap <silent>m :<C-u>call <sid>AutoMarkrement()<CR>
 
@@ -78,4 +79,3 @@ nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 
 map <Leader>r :set filetype=ruby<CR>
 
-tnoremap <silent> <C-[> <C-\><C-n>
