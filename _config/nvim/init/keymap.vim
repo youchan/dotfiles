@@ -78,4 +78,4 @@ vmap <Leader>o <Plug>(openbrowser-open)
 nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 
 map <Leader>r :set filetype=ruby<CR>
-
+nnoremap <Leader>d :<C-u>e ~/diary/=strftime("%H:%M:%S").md
