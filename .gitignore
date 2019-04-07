@@ -1,2 +1,5 @@
 _config/nvim/pack/minpac/opt/minpac
 _config/configstore
+_config/hub
+_config/exercism
+_config/vim/yankround
