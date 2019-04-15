@@ -46,6 +46,8 @@ runtime! init/*.vim
 
 colorscheme iceberg
 
+let b:match_words = "<if>:<end>,<begin>:<end>,<def>:<end>,<class>:<end>"
+
 "-----------------------------------------
 " skk.vim
 " http://peryaudo.hatenablog.com/entry/20100505/1273048637
@@ -77,9 +79,15 @@ let g:ref_refe_cmd = $HOME.'/.rbenv/shims/refe' "refeコマンドのパス
 " for NERD Commenter
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
+let g:NERDCustomDelimiters = { 'vim': { 'left': '"' } }
 
 "-----------------------------------------
 " deoplete
 let g:deoplete#enable_at_startup = 1
 
-let b:match_words = "<if>:<end>,<begin>:<end>,<def>:<end>,<class>:<end>"
+"-----------------------------------------
+" for ale
+
+let g:ale_linters = {
+\   'ruby': ['ruby'],
+\}

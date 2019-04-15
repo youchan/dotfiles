@@ -33,3 +33,7 @@ alias k='kubectl'
 alias kg='kubectl get'
 alias kd='kubectl describe'
 alias v=vim
+alias l='ls -F'
+alias ll='ls -lF'
+alias la='ls -aF'
+alias lla='ls -alF'
