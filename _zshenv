@@ -14,3 +14,6 @@ export LD_LIBRARY_PATH='/opt/intel/mkl/lib'
 
 #export URXVT_PERL_LIB=$HOME/.urxvt/ext
 #
+export CUDA_PATH=/usr/local/cuda
+export PATH=$CUDA_PATH/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_PATH/lib64:$LD_LIBRARY_PATH

@@ -8,6 +8,13 @@ fi
 
 cd "$HOME/.config"; ln -s ../dotfiles/_config/nvim
 
+if [ ! -d "/Users/youchan/.rbenv" ]; then
+  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+  git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+  git clone https://github.com/amatsuda/gem-src.git ~/.rbenv/plugins/gem-src
+  eval "$(~/.rbenv/bin/rbenv init -)"
+fi
+
 if [ ! -d "$HOME/.config/nvim/pack/minpac/opt" ]; then
   git clone https://github.com/k-takata/minpac.git $HOME/.config/nvim/pack/minpac/opt/minpac
 fi
