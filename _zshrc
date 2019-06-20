@@ -2,6 +2,8 @@ autoload -Uz add-zsh-hook
 autoload -Uz colors; colors
 autoload -Uz vcs_info
 
+export LANG=ja_JP.UTF-8
+
 setopt prompt_subst
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export CLICOLOR=1

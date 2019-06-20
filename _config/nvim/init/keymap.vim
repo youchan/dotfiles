@@ -2,6 +2,9 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+map a> <Plug>(textobj-indent-a)
+map i> <Plug>(textobj-indent-i)
+
 noremap <Up> gk
 noremap <Down> gj
 
@@ -44,7 +47,6 @@ nmap gP <Plug>(yankround-gP)
 "nmap <Up> <Plug>(yankround-prev)
 "nmap <Down> <Plug>(yankround-next)
 nnoremap yy y$
-nnoremap ya VggGy
 
 vnoremap ; $h
 vnoremap <C-H> 0
