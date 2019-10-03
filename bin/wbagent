@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd ~/Projects/sweet/whitebase
+ruby agent.rb -D -u http://sweet-programming.net
