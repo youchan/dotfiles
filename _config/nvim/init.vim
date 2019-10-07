@@ -72,6 +72,11 @@ let g:markdown_fenced_languages = ['cpp', 'ruby', 'json']
 let g:gfm_syntax_emoji_conceal = 1
 
 "-----------------------------------------
+" table-mode
+"
+let g:table_mode_corner = '|'
+
+"-----------------------------------------
 " ref
 let g:ref_refe_cmd = $HOME.'/.rbenv/shims/refe' "refeコマンドのパス
 
