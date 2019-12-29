@@ -33,8 +33,6 @@ export GOPATH=$HOME/gocode
 
 export PYENV_ROOT="$HOME/.pyenv"
 
-source ~/.gh_api_token
-
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 EDITOR='vim'
 PROMPT=$'%m %#%{\e[m%}%'"{%} "
