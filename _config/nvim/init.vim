@@ -1,4 +1,3 @@
-" reset augroup
 augroup MyAutoCmd
     autocmd!
 augroup END
@@ -13,7 +12,6 @@ set softtabstop=2
 set shiftwidth=2
 set autoindent
 set expandtab
-"set foldcolumn=2
 set foldlevel=0
 set whichwrap=b,s,<,>,[,]
 
@@ -29,7 +27,7 @@ set imdisable
 set hidden
 
 set matchpairs& matchpairs+=<:>
-"colorscheme Tomorrow-Night-Eighties
+" colorscheme Tomorrow-Night-Eighties
 
 set statusline=%F%m%r%h%w%=\ [%{(&fenc!=''?&fenc:&enc)}/%{&ff}]\[%Y]\[%l,%v][%p%%]
 set laststatus=2
@@ -53,9 +51,12 @@ let b:match_words = "<if>:<end>,<begin>:<end>,<def>:<end>,<class>:<end>"
 " http://peryaudo.hatenablog.com/entry/20100505/1273048637
 if !has('gui_running')
     let g:eskk#directory = "~/.eskk"
-    let g:eskk#dictionary = { 'path': "~/.skk-jisyo", 'sorted': 0, 'encoding': 'utf-8', }
+    let g:eskk#dictionary = { 'path': "~/.skk-jisyo", 'sorted': 0, 'encoding': 'euc-jp', }
     let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp', }
-    let g:eskk#sub_dictionaries = [{ 'path': "~/.eskk/SKK-JISYO.emoji.utf8", 'sorted': 2, 'encoding': 'utf-8' }]
+    let g:eskk#sub_dictionaries = [
+      \ { 'path': "~/.eskk/SKK-JISYO.emoji.utf8", 'sorted': 2, 'encoding': 'utf-8' },
+      \ { 'path': "~/.eskk/SKK-JISYO.kaomoji.utf8", 'sorted': 3, 'encoding': 'utf-8' },
+    \]
     let skk_use_face = 1
 end
 

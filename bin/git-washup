@@ -1,0 +1,7 @@
+#!/bin/sh
+git checkout master && \
+git pull origin master && \
+git fetch -p youchan && \
+git branch -d $(git branch --merged | grep -v master | grep -v '*') && \
+git push youchan $(git branch -r --merged | grep origin/ | grep -v master | sed s~origin/~:~)
+git push youchan master

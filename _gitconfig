@@ -4,7 +4,7 @@
 [mergetool]
 	keepBackup = true
 [core]
-	excludesfile = /Users/youchan/.gitignore
+	excludesfile = ~/.gitignore
 	editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
