@@ -34,7 +34,7 @@ set laststatus=2
 
 set conceallevel=2
 
-set packpath^=~/.config/nvim
+set packpath^=~/.config/vim
 
 packadd minpac
 call minpac#init()
