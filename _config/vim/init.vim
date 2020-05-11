@@ -27,7 +27,6 @@ set imdisable
 set hidden
 
 set matchpairs& matchpairs+=<:>
-" colorscheme Tomorrow-Night-Eighties
 
 set statusline=%F%m%r%h%w%=\ [%{(&fenc!=''?&fenc:&enc)}/%{&ff}]\[%Y]\[%l,%v][%p%%]
 set laststatus=2
@@ -42,7 +41,11 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 runtime! init/*.vim
 
-colorscheme iceberg
+let g:enable_bold_font = 1
+let g:enable_italic_font = 1
+set background=dark
+
+colorscheme tender
 
 let b:match_words = "<if>:<end>,<begin>:<end>,<def>:<end>,<class>:<end>"
 
