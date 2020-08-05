@@ -6,7 +6,7 @@ let $CACHE = empty($XDG_CACHE_HOME) ? expand('$HOME/.cache') : $XDG_CACHE_HOME
 let $CONFIG = empty($XDG_CONFIG_HOME) ? expand('$HOME/.config') : $XDG_CONFIG_HOME
 let $DATA = empty($XDG_DATA_HOME) ? expand('$HOME/.local/share') : $XDG_DATA_HOME
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -60,6 +60,7 @@ if !has('gui_running')
       \ { 'path': "~/.eskk/SKK-JISYO.emoji.utf8", 'sorted': 2, 'encoding': 'utf-8' },
       \ { 'path': "~/.eskk/SKK-JISYO.kaomoji.utf8", 'sorted': 3, 'encoding': 'utf-8' },
     \]
+    let g:eskk#enable_completion = 1
     let skk_use_face = 1
 end
 
