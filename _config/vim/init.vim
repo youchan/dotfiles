@@ -18,7 +18,8 @@ set whichwrap=b,s,<,>,[,]
 syntax on
 set nobackup
 set encoding=utf8
-set fileencoding=utf8
+"set fileencoding=utf8
+set fileencodings=utf-8,cp932,sjis,euc-jp,latin1
 set list
 set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
 set number

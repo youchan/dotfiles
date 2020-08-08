@@ -9,3 +9,4 @@ apt install -y build-essential
 apt install -y libssl-dev zlib1g-dev
 apt install -y zsh vim-gtk3 neovim tmux snapd
 apt install -y fortune fortunes
+apt install -y peco jq libmagic-dev
