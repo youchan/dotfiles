@@ -37,7 +37,7 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 EDITOR='vim'
 PROMPT=$'%m %#%{\e[m%}%'"{%} "
 
-export PATH="$HOME/bin:$HOME/.nodebrew/current/bin:$HOME/.rbenv/bin:$PYENV_ROOT/bin:$HOME/gocode/bin:/opt/local/bin:/opt/local/sbin:/Library/TeX/texbin:$SCALA_HOME/bin:$LLVM_HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.nodebrew/current/bin:$HOME/.rbenv/bin:$PYENV_ROOT/bin:$HOME/gocode/bin:/opt/local/bin:/opt/local/sbin:/Library/TeX/texbin:$SCALA_HOME/bin:$LLVM_HOME/bin:/usr/local/bin:$(yarn global bin):$PATH"
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
