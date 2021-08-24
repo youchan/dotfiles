@@ -118,6 +118,7 @@ function propen() {
     local current_branch_name=$(git symbolic-ref --short HEAD | xargs ruby -ruri -e 'puts URI.escape(ARGV[0])')
     hub browse -- pull/${current_branch_name}
 }
+afetch
 echo
 fortune
 

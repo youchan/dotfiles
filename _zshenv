@@ -13,7 +13,8 @@ export DYLD_LIBRARY_PATH='/opt/intel/mkl/lib'
 export LD_LIBRARY_PATH='/opt/intel/mkl/lib'
 
 #export URXVT_PERL_LIB=$HOME/.urxvt/ext
-#
+
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_291
 export CUDA_PATH=/usr/local/cuda
-export PATH=$CUDA_PATH/bin:$PATH
+export PATH=$JAVA_HOME/bin:$CUDA_PATH/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_PATH/lib64:$LD_LIBRARY_PATH

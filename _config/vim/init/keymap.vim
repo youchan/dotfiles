@@ -21,8 +21,8 @@ nnoremap <C-N> :bn<CR>
 noremap <C-K> <C-U>
 noremap <C-J> <C-D>
 nnoremap <C-B>d :bd<CR>
-nnoremap <C-D> :bd<CR>
-nnoremap <C-B><C-D> :bd!<CR>
+nnoremap <C-X> :bd<CR>
+nnoremap <C-B><C-X> :bd!<CR>
 nnoremap <C-B>1 <ESC>:b1<CR>
 nnoremap <C-B>2 <ESC>:b2<CR>
 nnoremap <C-B>3 <ESC>:b3<CR>
