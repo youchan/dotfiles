@@ -18,3 +18,4 @@ export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_291
 export CUDA_PATH=/usr/local/cuda
 export PATH=$JAVA_HOME/bin:$CUDA_PATH/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_PATH/lib64:$LD_LIBRARY_PATH
+. "$HOME/.cargo/env"

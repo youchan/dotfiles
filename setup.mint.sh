@@ -8,8 +8,8 @@ fi
 
 cd "$HOME/.config"; ln -s ../dotfiles/_config/vim
 
-if [ ! -d "$HOME/.config/nvim/pack/minpac/opt" ]; then
-  git clone https://github.com/k-takata/minpac.git $HOME/.config/nvim/pack/minpac/opt/minpac
+if [ ! -d "$HOME/.config/vim/pack/minpac/opt" ]; then
+  git clone https://github.com/k-takata/minpac.git $HOME/.config/vim/pack/minpac/opt/minpac
 fi
 
 cd "$HOME"; ln -s dotfiles/_vimrc .vimrc
