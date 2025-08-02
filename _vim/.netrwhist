@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/Users/yo.osaki/dotfiles/_config/vim/init'
+let g:netrw_dirhist_1='/Users/yo.osaki/dotfiles/_config/vim'
+let g:netrw_dirhist_0='/Users/yo.osaki/andpad/andpad-local/builderpad.jp/packages'
+let g:netrw_dirhist_9='/Users/yo.osaki/andpad/andpad-local/builderpad.jp/packages/inspection'
+let g:netrw_dirhist_8='/Users/yo.osaki/andpad/andpad-local/builderpad.jp/packages'
+let g:netrw_dirhist_7='/Users/yo.osaki/andpad/andpad-local/builderpad.jp/spec'
+let g:netrw_dirhist_6='/Users/yo.osaki/andpad/andpad-local/builderpad.jp/spec/models/inspection'
+let g:netrw_dirhist_5='/Users/yo.osaki'
+let g:netrw_dirhist_4='/Users/yo.osaki/andpad/andpad-local/builderpad.jp/packages/inspection/app/models/order'
+let g:netrw_dirhist_3='/Users/yo.osaki/andpad/andpad-local/builderpad.jp/packages/inspection/app/models'

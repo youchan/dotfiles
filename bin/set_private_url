@@ -1,0 +1,1 @@
+git config --global "url.https://`echo $READONLY_GITHUB_TOKEN`:x-oauth-basic@github.com/88labs.insteadof" "https://github.com/88labs"

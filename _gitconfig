@@ -1,6 +1,6 @@
 [user]
 	name = youchan
-	email = youchan01@gmail.com
+	email = youchan@gmail.com
 [mergetool]
 	keepBackup = true
 [core]
@@ -20,6 +20,7 @@
     branch = auto
 [alias]
     co = checkout
+    cp = cherry-pick
     st = status
     tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
     ln = log --name-status
@@ -37,6 +38,8 @@
     squash = rebase -i --autosquash
     fixup = commit --fixup
     cp = cherry-pick
+    cll = config --local --list
+    cl = config --list
 [push]
 	default = simple
 [filter "lfs"]

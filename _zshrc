@@ -42,7 +42,9 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
 export PATH="$HOME/google-cloud-sdk/bin:$PATH"
 
-eval "$(rbenv init -)"
+if which rbenv >/dev/null 2>&1; then
+  eval "$(rbenv init -)"
+fi
 
 if which hub >/dev/null 2>&1; then
   eval "$(hub alias -s)"
@@ -50,6 +52,10 @@ fi
 
 if which pyenv >/dev/null 2>&1; then
   eval "$(pyenv init -)"
+fi
+
+if which direnv >/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
 fi
 
 zstyle ':vcs_info:*' enable git
@@ -118,8 +124,35 @@ function propen() {
     local current_branch_name=$(git symbolic-ref --short HEAD | xargs ruby -ruri -e 'puts URI.escape(ARGV[0])')
     hub browse -- pull/${current_branch_name}
 }
-afetch
-echo
-fortune
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+if which terraform >/dev/null 2>&1; then
+  complete -o nospace -C /opt/homebrew/bin/terraform terraform
+fi
+
+if which afetch >/dev/null 2>&1; then
+  afetch
+fi
+
+if which fortune >/dev/null 2>&1; then
+  echo
+  fortune
+fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/opt/homebrew/opt/mysql@8.4/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/mysql@8.4/lib"
+
+autoload -U +X bashcompinit && bashcompinit
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
+
+# bun completions
+[ -s "/Users/yo.osaki/.bun/_bun" ] && source "/Users/yo.osaki/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+. "/Users/yo.osaki/.deno/env"

@@ -1,0 +1,23 @@
+#!/bin/sh
+
+#source "$(git --exec-path)/git-sh-setup"
+
+function _config() {
+    git config --local --add user.name youchan
+    git config --local --add user.email youchan01@gmail.com
+}
+
+function _clone() {
+    if [[ $# == 1 ]]; then
+        git clone git@github-youchan:youchan/$1.git
+    else
+        echo "Usage: git youchan --clone <repo_name>"
+    fi
+}
+
+if [[ $1 == "--clone" ]]; then
+    _clone $2
+    cd $2
+fi
+
+_config
