@@ -16,9 +16,7 @@ cd "$HOME"; ln -s dotfiles/_vimrc .vimrc
 cd "$HOME"; ln -s dotfiles/_eskk .eskk
 cd "$HOME"; ln -s dotfiles/_zshenv .zshenv
 cd "$HOME"; ln -s dotfiles/_zshrc .zshrc
-cd "$HOME"; ln -s dotfiles/_zshrc .zshrc
 cd "$HOME"; ln -s dotfiles/_aliases .aliases
 cd "$HOME"; ln -s dotfiles/_hash .hash
 cd "$HOME"; ln -s dotfiles/_gitconfig .gitconfig
-cd "$HOME"; ln -s dotfiles/_gitignore .gitignore
-cd "$HOME"; ln -s dotfiles/_tmux.config .tmux.config
+cd "$HOME"; ln -s dotfiles/_tmux.conf .tmux.conf

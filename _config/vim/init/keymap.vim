@@ -57,8 +57,7 @@ nnoremap [unite] <NOP>
 nmap <Space> [unite]
 nnoremap [unite]m :Unite mark<CR>
 nnoremap [unite]b :Unite buffer<CR>
-nnoremap [unite]f :VimFiler -split -horizontal -force-quit<CR>
-nnoremap [unite]ff :VimFiler -split -simple -winwidth=35 -no-quit<CR>
+nnoremap [unite]f :Fern . -drawer<CR>
 nnoremap [unite]rm :Unite rails/model<CR>
 nnoremap [unite]rc :Unite rails/controller<CR>
 nnoremap [unite]rv :Unite rails/view<CR>
