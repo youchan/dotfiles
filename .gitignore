@@ -4,3 +4,4 @@ _config/hub
 _config/exercism
 _config/vim/yankround
 _config/nvim/pack/minpac
+_vim/.netrwhist
