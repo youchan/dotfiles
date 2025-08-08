@@ -73,7 +73,7 @@ let g:auto_save_no_updatetime = 1
 "-----------------------------------------
 " markdown-vim
 "
-let g:markdown_fenced_languages = ['cpp', 'ruby', 'json']
+let g:markdown_fenced_languages = ['c', 'cpp', 'ruby', 'json']
 let g:gfm_syntax_emoji_conceal = 1
 
 "-----------------------------------------
@@ -90,14 +90,3 @@ let g:ref_refe_cmd = $HOME.'/.rbenv/shims/refe' "refeコマンドのパス
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCustomDelimiters = { 'vim': { 'left': '"' } }
-
-"-----------------------------------------
-" deoplete
-let g:deoplete#enable_at_startup = 1
-
-"-----------------------------------------
-" for ale
-
-let g:ale_linters = {
-\   'ruby': ['ruby'],
-\}

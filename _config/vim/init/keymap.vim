@@ -57,7 +57,7 @@ nnoremap [unite] <NOP>
 nmap <Space> [unite]
 nnoremap [unite]m :Unite mark<CR>
 nnoremap [unite]b :Unite buffer<CR>
-nnoremap [unite]f :Fern . -drawer<CR>
+nnoremap [unite]f :DduFiles<CR>
 nnoremap [unite]ff :vsplit \| :Yazi<CR>
 nnoremap [unite]rm :Unite rails/model<CR>
 nnoremap [unite]rc :Unite rails/controller<CR>
