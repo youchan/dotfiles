@@ -33,6 +33,8 @@ nnoremap <C-B>7 <ESC>:b7<CR>
 nnoremap <C-B>8 <ESC>:b8<CR>
 nnoremap <C-B>9 <ESC>:b9<CR>
 nnoremap <C-B>0 <ESC>:b10<CR>
+nnoremap <C-L> gt
+nnoremap <C-H> gT
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
@@ -57,8 +59,8 @@ nnoremap [unite] <NOP>
 nmap <Space> [unite]
 nnoremap [unite]m :Unite mark<CR>
 nnoremap [unite]b :Unite buffer<CR>
-nnoremap [unite]f :DduFiles<CR>
-nnoremap [unite]ff :vsplit \| :Yazi<CR>
+nnoremap [unite]df :DduFiles<CR>
+nnoremap [unite]f :vsplit \| :Yazi<CR>
 nnoremap [unite]rm :Unite rails/model<CR>
 nnoremap [unite]rc :Unite rails/controller<CR>
 nnoremap [unite]rv :Unite rails/view<CR>
@@ -67,9 +69,8 @@ nnoremap [unite]rs :Unite rails/stylesheet<CR>
 nnoremap [unite]gb :Gita blame<CR>
 nnoremap [unite]gs :Gita status<CR>
 nnoremap [unite]gl :Gita log<CR>
-nmap [unite]gg :Unite giti/grep<CR>
-nmap [unite]ggp :Unite giti/grep<CR><C-R>"<CR>
-nmap [unite]gg* yiw:Unite giti/grep<CR><C-R>"<CR>
+nmap [unite]gg :DduGitGrep 
+nmap [unite]ggc :DduGitGrepCWord<CR>
 
 let mapleader = ","
 

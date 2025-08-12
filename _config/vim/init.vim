@@ -55,11 +55,7 @@ let b:match_words = "<if>:<end>,<begin>:<end>,<def>:<end>,<class>:<end>"
 if !has('gui_running')
     let g:eskk#directory = "~/.eskk"
     let g:eskk#dictionary = { 'path': "~/.skk-jisyo", 'sorted': 0, 'encoding': 'euc-jp', }
-    let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp', }
-    let g:eskk#sub_dictionaries = [
-      \ { 'path': "~/.eskk/SKK-JISYO.emoji.utf8", 'sorted': 2, 'encoding': 'utf-8' },
-      \ { 'path': "~/.eskk/SKK-JISYO.kaomoji.utf8", 'sorted': 3, 'encoding': 'utf-8' },
-    \]
+    let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf8", 'sorted': 1, 'encoding': 'utf-8', }
     let g:eskk#enable_completion = 1
     let skk_use_face = 1
 end
@@ -90,3 +86,7 @@ let g:ref_refe_cmd = $HOME.'/.rbenv/shims/refe' "refeコマンドのパス
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCustomDelimiters = { 'vim': { 'left': '"' } }
+
+"-----------------------------------------
+" for Yazi
+let g:yazi_replace_netrw = 1

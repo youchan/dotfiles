@@ -1,0 +1,47 @@
+packadd minpac
+call minpac#init()
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+call minpac#add('vim-denops/denops.vim')
+call minpac#add('Shougo/ddu.vim')
+call minpac#add('Shougo/ddu-source-file_rec')
+call minpac#add('Shougo/ddu-ui-ff')
+call minpac#add('Shougo/ddu-kind-file')
+
+call ddu#custom#patch_global({
+  \   'ui': 'ff',
+  \   'sources': [
+  \     {
+  \       'name': 'file_rec',
+  \       'params': {
+  \         'ignoredDirectories': ['.git', 'node_modules', 'vendor', '.next']
+  \       }
+  \     },
+  \   ],
+  \   'kindOptions': {
+  \     'file': {
+  \       'defaultAction': 'open',
+  \     },
+  \   },
+  \ })
+
+call ddu#custom#patch_local('files', {
+  \   'sources': ['file_rec'],
+  \   'sourceParams': {
+  \     'file_rec': {
+  \       'ignoredDirectories': [],
+  \     }
+  \   },
+  \   "sourceOptions": {
+  \     "file_rec": {
+  \       "maxItems": 500
+  \     }
+  \   }
+  \ })
+
+autocmd FileType ddu-ff call s:ddu_ff_settings()
+function s:ddu_ff_settings() abort
+  nnoremap <buffer><silent> q <Cmd>call ddu#ui#do_action('quit')<CR>
+  nnoremap <buffer><silent> <CR> <Cmd>call ddu#ui#do_action('itemAction', {'name': 'open'})<CR>
+endfunction
+
+command! DduFiles call ddu#start({'name': 'files', 'sourceOptions': {'file_rec': {'path': getcwd()}}})
